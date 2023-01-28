@@ -16,5 +16,8 @@ app.get('/impressum', (req, res) => {
 app.get('/datenschutz', (req, res) => {
 	return res.sendFile(path.join(__dirname, "./public/out", "datenschutz.html"));
 });
+app.get('*', (req, res) => {
+	return res.sendFile(path.join(__dirname, "./public/out", "404.html"));
+});
 
 app.listen(process.env.PORT || 3002, function(){console.log("Server started")});
